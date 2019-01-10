@@ -14,7 +14,7 @@
 </style>
 </head>
 <body>
-	<a href="userfolder/UserInfo.jsp" target="showframe">3.1获取用户信息</a><br>
+	<a href="test.jsp" target="showframe">3.1获取用户信息</a><br>
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.1获取用户信息</a><br>
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
@@ -27,7 +27,7 @@
 	<a href="main.jsp" target="showframe">3.9创建视频分类</a><br>
 	<a href="main.jsp" target="showframe">3.10编辑视频分类</a><br>
 	<a href="main.jsp" target="showframe">3.11删除视频分类</a><br>
-	<a href="main.jsp" target="showframe">3.12同步视频列表</a><br>
+	<a href="VideoList.jsp" target="showframe">3.12同步视频列表</a><br>
 	<a href="main.jsp" target="showframe">3.13创建视频列表</a><br>
 	<a href="main.jsp" target="showframe">3.14编辑视频列表</a><br>
 	<a href="main.jsp" target="showframe">3.15删除视频列表</a><br>
