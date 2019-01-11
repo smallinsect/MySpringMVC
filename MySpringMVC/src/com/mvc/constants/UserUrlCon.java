@@ -1,6 +1,6 @@
 package com.mvc.constants;
 
-public class UserInfo {
+public class UserUrlCon {
 	/**
 	 * 账号ID,登录admin可在首页右上角查看到此信息
 	 */
