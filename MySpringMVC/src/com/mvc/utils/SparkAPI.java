@@ -16,7 +16,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.mvc.beans.Video;
 import com.mvc.beans.VideoUploadInfo;
-import com.mvc.constants.UserInfo;
+import com.mvc.constants.UserUrlCon;
 import com.mvc.exceptions.SparkException;
 
 public class SparkAPI {
@@ -32,12 +32,12 @@ public class SparkAPI {
 	 */
 	public static JSONObject getCategoryTree() throws SparkException {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("userid", UserInfo.USER_ID);
+		params.put("userid", UserUrlCon.USER_ID);
 		params.put("format", "json");
 
 		String retrieve = retrieve(CATEGORY_INFO2, params);
 		if (StringUtils.isBlank(retrieve)) {
-			logger.info(CATEGORY_INFO2 + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserInfo.USER_KEY)
+			logger.info(CATEGORY_INFO2 + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY)
 							+ " \t return blank");
 			throw new SparkException("retrieve is null");
 		}
@@ -55,7 +55,7 @@ public class SparkAPI {
      */
     public static VideoUploadInfo createVideoUploadInfo(Video video) throws SparkException {
         Map<String, String> params = new HashMap<String, String>();
-        params.put("userid", UserInfo.USER_ID);
+        params.put("userid", UserUrlCon.USER_ID);
         params.put("title", video.getTitle());
         String tag = video.getTag();
         if (StringUtils.isNotBlank(tag)) {
@@ -80,7 +80,7 @@ public class SparkAPI {
 
         String retrieve = retrieve(VIDEO_CREATE_UPLOAD_INFO, params);
         if (StringUtils.isBlank(retrieve)) {
-            logger.info(VIDEO_CREATE_UPLOAD_INFO + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserInfo.USER_KEY) + " \t return blank");
+            logger.info(VIDEO_CREATE_UPLOAD_INFO + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY) + " \t return blank");
             throw new SparkException("retrieve is null");
         }
 
@@ -102,7 +102,7 @@ public class SparkAPI {
 
     private static String retrieve(String URI, Map<String, String> params) {
     	//System.currentTimeMillis()获取当前时间戳
-        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserInfo.USER_KEY);
+        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY);
 
         logger.info("retrieve " + u);
 
@@ -130,7 +130,7 @@ public class SparkAPI {
 
     public static void main(String[] args) {
     	Map<String, String> params = new HashMap<String, String>();
-    	params.put("userid", UserInfo.USER_ID);
+    	params.put("userid", UserUrlCon.USER_ID);
     	params.put("format", "json");
     	String str = retrieve("http://spark.bokecc.com/api/user", params);
     	System.out.println(str);

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mvc.constants.UserInfo;
+import com.mvc.constants.UserUrlCon;
 import com.mvc.utils.URLConUtil;
 
 @Controller
@@ -18,7 +18,7 @@ public class UserAction {
 	@ResponseBody
 	public String getUserInfo() {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("userid", UserInfo.USER_ID);
+		params.put("userid", UserUrlCon.USER_ID);
 		params.put("format", "json");
 		String str = URLConUtil.retrieve("http://spark.bokecc.com/api/user", params);
 		return str;

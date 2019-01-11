@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -20,13 +22,35 @@ $(function () {
 	$("#datagrid").datagrid({
 		method:"get",
 		url:"<%=basePath%>getVideoList",
+		fixed: true,
+		fitColumns: true,
 		columns:[[
-			{name:'视频列表ID',field:'id',width:80},
-			{name:'视频列表名称',field:'name',width:80},
-			{name:'视频数量',field:'videocount',width:80},
-			{name:'分类ID',field:'categoryid',width:80},
+			{title:'视频标题',field:'title',width:80},
+			{title:'视频时长',field:'duration',width:80,
+				formatter: function(value,row,index){
+					var s=value%60%60;
+					value=Math.floor(value/60);
+					var m=value%60;
+					value=Math.floor(value/60);
+					var h=value;
+					return h+":"+m+":"+s;
+				}
+			},
+			{title:'视频截图地址',field:'image',width:80,
+				formatter: function(value,row,index){
+					return '<img src="'+value+'">';
+				}	
+			},
+			{title:'占用空间',field:'totalsize',width:80,
+				formatter: function(value,row,index){
+					var num=value/1024/1024;
+					return num.toFixed(1)+"M";
+				}
+			},
+			{title:'上传时间',field:'uploadtime',width:80},
 		]]
 	});
+	
 });
 
 </script>
@@ -35,7 +59,7 @@ $(function () {
 	<h2>视频列表</h2>
 	<div style="margin:20px 0;"></div>
 	
-	<table class="easyui-datagrid" id="datagrid" title="Basic DataGrid" style="width:700px;height:250px"
+	<table class="easyui-datagrid" id="datagrid" style="width:1000px;height:250px"
 			data-options="singleSelect:true,collapsible:true">
 		<thead>
 			<tr>

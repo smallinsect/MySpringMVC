@@ -1,6 +1,8 @@
 package com.mvc.actions;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,7 +12,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mvc.constants.UserInfo;
+import com.alibaba.fastjson.JSONObject;
+import com.mvc.bo.ImageAlternateBO;
+import com.mvc.bo.VideoBO;
+import com.mvc.constants.UserUrlCon;
+import com.mvc.constants.VideoUrlCon;
 import com.mvc.utils.URLConUtil;
 
 @Controller
@@ -18,14 +24,41 @@ public class VideoAction {
 	
 	@RequestMapping("getVideoList")
 	@ResponseBody
-	public String getVideoList(HttpServletRequest request, HttpServletResponse response) {
+	public List<VideoBO> getVideoList(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
-		params.put("userid", UserInfo.USER_ID);
-		params.put("num_per_page", "100");
-		params.put("page", "1");
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("videoid", "F7F8944884AC773D9C33DC5901307461");
 		params.put("format", "json");
-		String json = URLConUtil.retrieve("http://spark.bokecc.com/api/playlists", params);
-		return json;
+		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_V4, params);
+		JSONObject object = JSONObject.parseObject(json);
+		VideoBO video = JSONObject.parseObject(object.getString("video"), VideoBO.class);
+		List<ImageAlternateBO> list = JSONObject.parseArray(object.getJSONObject("video").getString("image-alternate"), ImageAlternateBO.class);
+		video.setImagealternate(list);
+		
+		List<VideoBO> li = new ArrayList<VideoBO>();
+		li.add(video);
+		return li;
+	}
+	
+	/**
+	 * 获取单个视频信息
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("getVideo")
+	@ResponseBody
+	public VideoBO getVideo(HttpServletRequest request, HttpServletResponse response) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("videoid", "F7F8944884AC773D9C33DC5901307461");
+		params.put("format", "json");
+		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_V4, params);
+		JSONObject object = JSONObject.parseObject(json);
+		VideoBO video = JSONObject.parseObject(object.getString("video"), VideoBO.class);
+		List<ImageAlternateBO> list = JSONObject.parseArray(object.getJSONObject("video").getString("image-alternate"), ImageAlternateBO.class);
+		video.setImagealternate(list);
+		return video;
 	}
 	
 }

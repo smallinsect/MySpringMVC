@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.mvc.constants.UserInfo;
+import com.mvc.constants.UserUrlCon;
 
 
 public class URLConUtil {
@@ -18,7 +18,7 @@ public class URLConUtil {
     
     public static String retrieve(String URI, Map<String, String> params) {
     	//System.currentTimeMillis()获取当前时间戳
-        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserInfo.USER_KEY);
+        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY);
 
         logger.info("retrieve " + u);
 
