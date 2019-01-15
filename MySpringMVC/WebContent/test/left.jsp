@@ -18,7 +18,7 @@
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.1获取用户信息</a><br>
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
-	<a href="main.jsp" target="showframe">3.3批量获取视频信息</a><br>
+	<a href="videos_v4.jsp" target="showframe">3.3批量获取视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.4按分类获取视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.5获取视频播放代码</a><br>
 	<a href="main.jsp" target="showframe">3.6编辑视频信息</a><br>
