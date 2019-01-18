@@ -22,13 +22,13 @@ $(function () {
 	$("#datagrid").datagrid({
 		method:"get",
 		url:"<%=basePath%>getVideoDataGrid",
-		fixed: true,
+		//fixed: true,
 		fitColumns: true,
-		pagination:true,//分页显示
+		pagination: true,//分页显示
 		pageNumber: 1,//初始页码
-		pageSize：20,//初始化页面大小
+		pageSize: 20,//初始化页面大小
 		pageList: [20, 40, 60, 80, 100],//页面大小列表
-		columns:[[
+		columns: [[
 			{title:'视频标题',field:'title',width:80},
 			{title:'视频时长',field:'duration',width:80,
 				formatter: function(value,row,index){
@@ -63,18 +63,17 @@ $(function () {
 	<h2>批量显示视频信息</h2>
 	<div style="margin:20px 0;"></div>
 	
-	<table class="easyui-datagrid" id="datagrid" style="width:700px;height:250px"
-			data-options="singleSelect:true">
+	<table class="easyui-datagrid" id="datagrid" style="width:1000px;height:800px" data-options="singleSelect:true">
 		<thead>
 			<tr>
-				<th data-options="field:'itemid',width:80,halign:'center'">Item ID</th>
-				<th data-options="field:'productid',width:100,halign:'center'">Product</th>
-				<th data-options="field:'listprice',width:80,align:'right',halign:'center'">List Price</th>
-				<th data-options="field:'unitcost',width:80,align:'right',halign:'center'">Unit Cost</th>
-				<th data-options="field:'attr1',width:250,halign:'center'">Attribute</th>
-				<th data-options="field:'status',width:60,align:'center',halign:'center'">Status</th>
+				<th data-options="field:'title',width:80">视频标题</th>
+				<th data-options="field:'duration',width:80">视频时长</th>
+				<th data-options="field:'image',width:80">视频截图地址</th>
+				<th data-options="field:'totalsize',width:80">视频截图地址</th>
+				<th data-options="field:'uploadtime',width:80">上传时间</th>
 			</tr>
 		</thead>
 	</table>
+	
 </body>
 </html>

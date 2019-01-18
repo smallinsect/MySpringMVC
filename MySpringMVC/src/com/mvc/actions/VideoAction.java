@@ -54,20 +54,34 @@ public class VideoAction {
 	
 	@RequestMapping("getVideoDataGrid")
 	@ResponseBody
-	public DataGrid getVideoDataGrid(HttpServletRequest request, HttpServletResponse response) {
+	public DataGrid<VideoBO> getVideoDataGrid(HttpServletRequest request, HttpServletResponse response) {
+		//每页行数
+		String rows = request.getParameter("rows");
+		//页码
+		String page = request.getParameter("page");
+		
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("userid", UserUrlCon.USER_ID);
 		//params.put("videoid_from", null);//起始 videoid，若为空，则从上传的第⼀一个视频开始
 		//params.put("videoid_to", null);//终⽌止 videoid，若为空，则到最后⼀一个上传的视频
-		params.put("num_per_page", "100");//返回信息时，每⻚页包含的视频个数 注:允许范围为 1~100
-		params.put("page", "1");//当前⻚页码
+		if(rows != null) {
+			params.put("num_per_page", rows);//返回信息时，每⻚页包含的视频个数 注:允许范围为 1~100
+		}else {
+			params.put("num_per_page", "100");
+		}
+		if(page != null) {
+			params.put("page", page);//当前的页码
+		}else {
+			params.put("page", "1");
+		}
 		params.put("format", "json");
 		String json = URLConUtil.retrieve(VideoUrlCon.VIDEOS_V4, params);
+		
 		JSONObject object = JSONObject.parseObject(json);
 		JSONObject videos = object.getJSONObject("videos");
 		Integer itotal = videos.getInteger("total");
-//		List<VideoBO> listVideo = JSONObject.parseArray(videos.getString("video"), VideoBO.class);
 		JSONArray array = JSONObject.parseArray(videos.getString("video"));
+		
 		List<VideoBO> listVideo = new ArrayList<VideoBO>();
 		for(int i = 0; i < array.size(); ++i) {
 			JSONObject jo = array.getJSONObject(i);
@@ -77,7 +91,7 @@ public class VideoAction {
 			listVideo.add(vb);
 		}
 		
-		return null;
+		return new DataGrid<VideoBO>(itotal, listVideo);
 	}
 	
 	/**
