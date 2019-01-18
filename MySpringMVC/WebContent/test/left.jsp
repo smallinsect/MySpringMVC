@@ -14,13 +14,13 @@
 </style>
 </head>
 <body>
-	<a href="test.jsp" target="showframe">3.1获取用户信息</a><br>
+	<a href="test.jsp" target="showframe">3.1获取用户信息*</a><br>
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.1获取用户信息</a><br>
 	<a href="main.jsp" target="showframe">3.2获取视频信息</a><br>
-	<a href="videos_v4.jsp" target="showframe">3.3批量获取视频信息</a><br>
+	<a href="videos_v4.jsp" target="showframe">3.3批量获取视频信息*</a><br>
 	<a href="main.jsp" target="showframe">3.4按分类获取视频信息</a><br>
-	<a href="main.jsp" target="showframe">3.5获取视频播放代码</a><br>
+	<a href="video_playcode.jsp" target="showframe">3.5获取视频播放代码*</a><br>
 	<a href="main.jsp" target="showframe">3.6编辑视频信息</a><br>
 	<a href="main.jsp" target="showframe">3.7删除视频</a><br>
 	<a href="main.jsp" target="showframe">3.8获取视频分类</a><br>

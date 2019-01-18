@@ -115,4 +115,27 @@ public class VideoAction {
 		return video;
 	}
 	
+	/**
+	 * 获取单个视频信息
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("getVideoPlaycode")
+	@ResponseBody
+	public String getVideoPlaycode(HttpServletRequest request, HttpServletResponse response) {
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("videoid", "1C6ADBF99B9BE3DD9C33DC5901307461");
+		//params.put("playerid", "");//播放器id，若为空，返回默认播放器
+		params.put("player_width", "100%");
+		params.put("player_height", "100%");
+		params.put("auto_play", "true");
+		params.put("mediatype", "1");
+		params.put("format", "json");
+		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_PLAYCODE, params);
+		JSONObject object = JSONObject.parseObject(json);
+		String playcode = object.getJSONObject("video").getString("playcode");
+		return playcode;
+	}
 }
