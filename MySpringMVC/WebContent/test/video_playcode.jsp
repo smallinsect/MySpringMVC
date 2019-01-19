@@ -25,10 +25,11 @@ $(function () {
 // 		contentType:'application/json;charset=UTF-8',
 		success : function(data) {
 			if(data){
-				var arr = data.playcode.split('src="');
-				arr = arr[1].split('" type="');
-				var http = arr[0];//获取视频播放链接
-				player_init("cc_A5FEB0EA05F2100B9C33DC5901307461", http);
+// 				var arr = data.playcode.split('src="');
+// 				arr = arr[1].split('" type="');
+// 				var http = arr[0];//获取视频播放链接
+				player_init("cc_A5FEB0EA05F2100B9C33DC5901307461", data.playcode);
+// 				console.log(parseDom(data.playcode)[0]);
 			}
 		},
 		error : function(data) {
@@ -39,16 +40,7 @@ $(function () {
 
 //参数playerID，即播放器父级元素的ID, res是请求接口成功后返回的对象
 function player_init(playerID, res) {
-	var //video = res.video, 
-// 		video_url = video.ccSrc, // ccSrc格式为：https://p.bokecc.com/player?vid=您的VID&siteid=您的SITEID&autoStart=false&width=800&height=420&playerid=2A689ED87A00752E&playertype=1
-		video_url = res,
-		oWorkspace = document.getElementById(playerID), 
-		oScript = document.createElement("script");
-	oScript.type = "text/javascript";
-	oScript.src = video_url;
-	oWorkspace.innerHTML = "";
-	oWorkspace.appendChild(oScript);
-	oWorkspace.style.display = 'block';
+	$("#"+playerID).append(res);
 }
 
 // //CC视频 默认会调用这个回调方法
@@ -162,7 +154,7 @@ function player_init(playerID, res) {
 </head>
 <body>
 
-<div id="cc_A5FEB0EA05F2100B9C33DC5901307461" style="width: 400px; height: 300px;">
+<div id="cc_A5FEB0EA05F2100B9C33DC5901307461" style="width: 400px; height: 300px; border: 1px red solid;">
 </div>
 
 </body>
