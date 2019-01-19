@@ -135,7 +135,7 @@ public class VideoAction {
 		params.put("format", "json");
 		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_PLAYCODE, params);
 		JSONObject object = JSONObject.parseObject(json);
-		String playcode = object.getJSONObject("video").getString("playcode");
+		String playcode = object.getString("video");
 		return playcode;
 	}
 }

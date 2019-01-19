@@ -6,11 +6,11 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	.btn{
-		width: 250px;
-		color: red;
-		text-align: left;
-	}
+
+a{
+	text-decoration: none;
+}
+
 </style>
 </head>
 <body>
