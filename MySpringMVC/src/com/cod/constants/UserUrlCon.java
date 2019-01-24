@@ -9,4 +9,9 @@ public class UserUrlCon {
 	 * API KEY,登录admin -->云点播 --> 应用 -->API接口 --> 获取key 
 	 */
 	public static final String USER_KEY = "ksGVuAzeUpOsec6vKVFVRask7UC1BNyu";
+	
+	/**
+	 * 获取用户信息
+	 */
+	public static final String USER = "http://spark.bokecc.com/api/user";
 }
