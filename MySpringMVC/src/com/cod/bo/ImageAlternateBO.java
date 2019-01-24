@@ -1,4 +1,4 @@
-package com.mvc.bo;
+package com.cod.bo;
 
 public class ImageAlternateBO {
 	private Integer index;//视频截图排列序号

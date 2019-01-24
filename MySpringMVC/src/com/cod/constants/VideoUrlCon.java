@@ -1,4 +1,4 @@
-package com.mvc.constants;
+package com.cod.constants;
 
 public class VideoUrlCon {
 	

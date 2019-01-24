@@ -1,4 +1,4 @@
-package com.mvc.utils;
+package com.cod.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.mvc.constants.UserUrlCon;
+import com.cod.constants.UserUrlCon;
 
 
 public class URLConUtil {

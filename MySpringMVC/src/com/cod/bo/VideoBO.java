@@ -1,4 +1,4 @@
-package com.mvc.bo;
+package com.cod.bo;
 
 import java.util.List;
 

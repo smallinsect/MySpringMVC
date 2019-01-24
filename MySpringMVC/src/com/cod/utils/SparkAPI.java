@@ -1,4 +1,4 @@
-package com.mvc.utils;
+package com.cod.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,10 +14,10 @@ import org.apache.log4j.Logger;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.mvc.beans.Video;
-import com.mvc.beans.VideoUploadInfo;
-import com.mvc.constants.UserUrlCon;
-import com.mvc.exceptions.SparkException;
+import com.cod.beans.Video;
+import com.cod.beans.VideoUploadInfo;
+import com.cod.constants.UserUrlCon;
+import com.cod.exceptions.SparkException;
 
 public class SparkAPI {
 

@@ -1,4 +1,4 @@
-package com.mvc.beans;
+package com.cod.beans;
 
 import com.alibaba.fastjson.annotation.JSONField;
 

@@ -1,4 +1,4 @@
-package com.mvc.actions;
+package com.cod.actions;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.mvc.bo.ImageAlternateBO;
-import com.mvc.bo.VideoBO;
-import com.mvc.constants.UserUrlCon;
-import com.mvc.constants.VideoUrlCon;
-import com.mvc.easyui.DataGrid;
-import com.mvc.utils.URLConUtil;
+import com.cod.bo.ImageAlternateBO;
+import com.cod.bo.VideoBO;
+import com.cod.constants.UserUrlCon;
+import com.cod.constants.VideoUrlCon;
+import com.cod.easyui.DataGrid;
+import com.cod.utils.URLConUtil;
 
 @Controller
 public class VideoAction {
