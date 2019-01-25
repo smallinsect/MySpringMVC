@@ -17,7 +17,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.cod.beans.Video;
 import com.cod.beans.VideoUploadInfo;
 import com.cod.constants.UserUrlCon;
-import com.cod.exceptions.SparkException;
+import com.common.exceptions.SparkException;
 
 public class SparkAPI {
 

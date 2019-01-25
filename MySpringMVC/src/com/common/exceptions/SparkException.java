@@ -1,4 +1,4 @@
-package com.cod.exceptions;
+package com.common.exceptions;
 
 public class SparkException extends Exception {
 	private static final long serialVersionUID = 1L;
