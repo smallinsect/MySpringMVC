@@ -1,4 +1,4 @@
-package com.cod.easyui;
+package com.common.easyui;
 
 import java.util.List;
 

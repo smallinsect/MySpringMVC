@@ -1,4 +1,4 @@
-package com.cod.actions;
+package com.cod.controllers;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,11 +18,11 @@ import com.cod.bo.ImageAlternateBO;
 import com.cod.bo.VideoBO;
 import com.cod.constants.UserUrlCon;
 import com.cod.constants.VideoUrlCon;
-import com.cod.easyui.DataGrid;
-import com.cod.utils.URLConUtil;
+import com.common.easyui.DataGrid;
+import com.common.utils.URLConUtil;
 
 @Controller
-public class VideoAction {
+public class VideoController {
 	
 	@RequestMapping("getVideoList")
 	@ResponseBody
@@ -34,7 +34,7 @@ public class VideoAction {
 		params.put("num_per_page", "100");//返回信息时，每⻚页包含的视频个数 注:允许范围为 1~100
 		params.put("page", "1");//当前⻚页码
 		params.put("format", "json");
-		String json = URLConUtil.retrieve(VideoUrlCon.VIDEOS_V4, params);
+		String json = URLConUtil.cretrieve(VideoUrlCon.VIDEOS_V4, params);
 		JSONObject object = JSONObject.parseObject(json);
 		JSONObject videos = object.getJSONObject("videos");
 		Integer itotal = videos.getInteger("total");
@@ -75,7 +75,7 @@ public class VideoAction {
 			params.put("page", "1");
 		}
 		params.put("format", "json");
-		String json = URLConUtil.retrieve(VideoUrlCon.VIDEOS_V4, params);
+		String json = URLConUtil.cretrieve(VideoUrlCon.VIDEOS_V4, params);
 		
 		JSONObject object = JSONObject.parseObject(json);
 		JSONObject videos = object.getJSONObject("videos");
@@ -107,7 +107,7 @@ public class VideoAction {
 		params.put("userid", UserUrlCon.USER_ID);
 		params.put("videoid", "F7F8944884AC773D9C33DC5901307461");
 		params.put("format", "json");
-		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_V4, params);
+		String json = URLConUtil.cretrieve(VideoUrlCon.VIDEO_V4, params);
 		JSONObject object = JSONObject.parseObject(json);
 		VideoBO video = JSONObject.parseObject(object.getString("video"), VideoBO.class);
 		List<ImageAlternateBO> list = JSONObject.parseArray(object.getJSONObject("video").getString("image-alternate"), ImageAlternateBO.class);
@@ -133,7 +133,7 @@ public class VideoAction {
 		params.put("auto_play", "true");
 		params.put("mediatype", "1");
 		params.put("format", "json");
-		String json = URLConUtil.retrieve(VideoUrlCon.VIDEO_PLAYCODE, params);
+		String json = URLConUtil.cretrieve(VideoUrlCon.VIDEO_PLAYCODE, params);
 		JSONObject object = JSONObject.parseObject(json);
 		String playcode = object.getString("video");
 		return playcode;

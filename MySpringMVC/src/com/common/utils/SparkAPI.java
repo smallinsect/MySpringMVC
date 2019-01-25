@@ -1,4 +1,4 @@
-package com.cod.utils;
+package com.common.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,7 +37,7 @@ public class SparkAPI {
 
 		String retrieve = retrieve(CATEGORY_INFO2, params);
 		if (StringUtils.isBlank(retrieve)) {
-			logger.info(CATEGORY_INFO2 + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY)
+			logger.info(CATEGORY_INFO2 + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.C_USER_KEY)
 							+ " \t return blank");
 			throw new SparkException("retrieve is null");
 		}
@@ -80,7 +80,7 @@ public class SparkAPI {
 
         String retrieve = retrieve(VIDEO_CREATE_UPLOAD_INFO, params);
         if (StringUtils.isBlank(retrieve)) {
-            logger.info(VIDEO_CREATE_UPLOAD_INFO + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY) + " \t return blank");
+            logger.info(VIDEO_CREATE_UPLOAD_INFO + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.C_USER_KEY) + " \t return blank");
             throw new SparkException("retrieve is null");
         }
 
@@ -102,7 +102,7 @@ public class SparkAPI {
 
     private static String retrieve(String URI, Map<String, String> params) {
     	//System.currentTimeMillis()获取当前时间戳
-        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.USER_KEY);
+        String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.C_USER_KEY);
 
         logger.info("retrieve " + u);
 

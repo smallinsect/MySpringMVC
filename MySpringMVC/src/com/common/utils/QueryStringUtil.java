@@ -1,4 +1,4 @@
-package com.cod.utils;
+package com.common.utils;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -56,7 +56,6 @@ public class QueryStringUtil {
         if (qs == null) {
             return null;
         }
-
         String hash;
         String htqs;
         if (!qs.equals("")) {

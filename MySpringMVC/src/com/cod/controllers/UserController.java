@@ -1,4 +1,4 @@
-package com.cod.actions;
+package com.cod.controllers;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cod.constants.UserUrlCon;
-import com.cod.utils.URLConUtil;
+import com.common.utils.URLConUtil;
 
 @Controller
-public class UserAction {
+public class UserController {
 	
 //	@RequestMapping(value="/getUserInfo", produces="application/json; charset=utf-8")
 	@RequestMapping("/getUserInfo")
@@ -20,7 +20,7 @@ public class UserAction {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("userid", UserUrlCon.USER_ID);
 		params.put("format", "json");
-		String str = URLConUtil.retrieve("http://spark.bokecc.com/api/user", params);
+		String str = URLConUtil.cretrieve("http://spark.bokecc.com/api/user", params);
 		return str;
 	}
 	
