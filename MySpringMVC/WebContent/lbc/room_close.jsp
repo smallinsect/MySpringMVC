@@ -10,6 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-创建直播间
+关闭直播间
 </body>
 </html>

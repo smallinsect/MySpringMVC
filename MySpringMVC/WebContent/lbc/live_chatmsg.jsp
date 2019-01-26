@@ -10,6 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-创建直播间
+获取聊天信息
 </body>
 </html>

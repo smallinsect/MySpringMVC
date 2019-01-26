@@ -10,6 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-创建直播间
+获取直播间内用户进出信息
 </body>
 </html>

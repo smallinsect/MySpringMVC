@@ -10,6 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-创建直播间
+获取所有直播回放的观看统计信息
 </body>
 </html>
