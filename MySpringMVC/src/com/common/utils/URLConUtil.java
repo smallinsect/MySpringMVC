@@ -16,6 +16,12 @@ import com.cod.constants.UserUrlCon;
 public class URLConUtil {
     public static Logger logger = Logger.getLogger(SparkAPI.class);
     
+    /**
+     * 	云点播
+     * @param URI
+     * @param params
+     * @return
+     */
     public static String cretrieve(String URI, Map<String, String> params) {
     	//System.currentTimeMillis()获取当前时间戳
         String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.C_USER_KEY);
@@ -44,6 +50,12 @@ public class URLConUtil {
         return null;
     }
     
+    /**
+     * 	云直播
+     * @param URI
+     * @param params
+     * @return
+     */
     public static String lretrieve(String URI, Map<String, String> params) {
     	//System.currentTimeMillis()获取当前时间戳
         String u = URI + "?" + QueryStringUtil.createHashedQueryString(params, System.currentTimeMillis(), UserUrlCon.L_USER_KEY);
