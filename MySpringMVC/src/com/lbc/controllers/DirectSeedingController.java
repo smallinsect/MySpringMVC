@@ -16,8 +16,8 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cod.bo.ImageAlternateBO;
 import com.cod.bo.VideoBO;
-import com.cod.constants.UserUrlCon;
 import com.cod.constants.VideoUrlCon;
+import com.common.constants.UserUrlCon;
 import com.common.easyui.DataGrid;
 import com.common.utils.URLConUtil;
 import com.lbc.constants.DirectSeedingUrlCon;
@@ -150,7 +150,12 @@ public class DirectSeedingController {
 	@RequestMapping("roomInfo")
 	@ResponseBody
 	public String roomInfo(HttpServletRequest request, HttpServletResponse response) {
+		String pagenum = request.getParameter("pagenum");
+		String pageindex = request.getParameter("pageindex");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("pagenum", pagenum);
+		params.put("pageindex", pageindex);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.ROOM_INFO, params);
 		
 		return json;

@@ -16,8 +16,8 @@ import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.cod.bo.ImageAlternateBO;
 import com.cod.bo.VideoBO;
-import com.cod.constants.UserUrlCon;
 import com.cod.constants.VideoUrlCon;
+import com.common.constants.UserUrlCon;
 import com.common.easyui.DataGrid;
 import com.common.utils.URLConUtil;
 
@@ -201,7 +201,7 @@ public class VideoController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("videoV4")
+	@RequestMapping("videos")
 	@ResponseBody
 	public String videos(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -243,7 +243,7 @@ public class VideoController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("videosV3")
+	@RequestMapping("videosV4")
 	@ResponseBody
 	public String videosV4(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -271,7 +271,7 @@ public class VideoController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("videosCategory")
+	@RequestMapping("videoPlaycode")
 	@ResponseBody
 	public String videoPlaycode(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -355,7 +355,7 @@ public class VideoController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("categoryCreate")
+	@RequestMapping("categoryUpdate")
 	@ResponseBody
 	public String categoryUpdate(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
@@ -1097,7 +1097,7 @@ public class VideoController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("pwdVideo")
+	@RequestMapping("pwdVideos")
 	@ResponseBody
 	public String pwdVideos(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();

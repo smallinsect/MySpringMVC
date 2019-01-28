@@ -10,7 +10,8 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.cod.constants.UserUrlCon;
+import com.common.constants.UserUrlCon;
+
 
 
 public class URLConUtil {

@@ -1,4 +1,4 @@
-package com.cod.constants;
+package com.common.constants;
 
 public class UserUrlCon {
 	/**

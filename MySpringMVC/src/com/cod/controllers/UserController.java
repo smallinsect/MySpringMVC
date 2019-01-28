@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.cod.constants.UserUrlCon;
+import com.common.constants.UserUrlCon;
 import com.common.utils.URLConUtil;
 
 @Controller
