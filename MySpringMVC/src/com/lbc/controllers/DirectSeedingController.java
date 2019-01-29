@@ -193,7 +193,19 @@ public class DirectSeedingController {
 	@RequestMapping("v2LiveInfo")
 	@ResponseBody
 	public String v2LiveInfo(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");//直播间id
+		String pagenum = request.getParameter("pagenum");//每页显示的个数
+		String pageindex = request.getParameter("pageindex");//页码
+		String starttime = request.getParameter("starttime");//查询起始时间
+		String endtime = request.getParameter("endtime");//查询截止时间
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("pagenum", pagenum);
+		params.put("pageindex", pageindex);
+		params.put("starttime", starttime);
+		params.put("endtime", endtime);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.V2_LIVE_INFO, params);
 		
 		return json;

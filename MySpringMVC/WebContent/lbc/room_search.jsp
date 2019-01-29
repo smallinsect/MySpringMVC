@@ -11,7 +11,7 @@
 	<script type="text/javascript" src="<%=basePath %>jquery/jquery.js"></script>
 	<script type="text/javascript">
 		var dataparams = {
-				roomid: "27C5073749A609BE9C33DC5901307461"
+				roomid: "27C5073749A609BE9C33DC5901307461"//直播间ID
 		};
 		$.ajax({
 			async: true,
