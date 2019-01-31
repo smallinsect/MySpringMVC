@@ -17,7 +17,7 @@
 		$.ajax({
 			async: true,
 			type: "get",
-			url: "<%=basePath %>v2RecordSearch",
+			url: "<%=basePath %>liveMerge",
 			data: dataparams,
 			dataType: "json",
 			success: function(data){

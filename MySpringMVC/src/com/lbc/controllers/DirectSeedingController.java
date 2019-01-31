@@ -287,6 +287,7 @@ public class DirectSeedingController {
 	@ResponseBody
 	public String roomsBroadcasting(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.ROOMS_BROADCASTING, params);
 		
 		return json;
