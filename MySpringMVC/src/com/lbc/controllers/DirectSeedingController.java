@@ -320,7 +320,15 @@ public class DirectSeedingController {
 	@RequestMapping("statisConnections")
 	@ResponseBody
 	public String statisConnections(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String starttime = request.getParameter("starttime");
+		String endtime = request.getParameter("endtime");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("starttime", starttime);
+		params.put("endtime", endtime);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_CONNECTIONS, params);
 		
 		return json;
