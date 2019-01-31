@@ -248,7 +248,10 @@ public class DirectSeedingController {
 	@RequestMapping("v2RecordSearch")
 	@ResponseBody
 	public String v2RecordSearch(HttpServletRequest request, HttpServletResponse response) {
+		String recordid = request.getParameter("recordid");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("recordid", recordid);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.V2_RECORD_SEARCH, params);
 		
 		return json;

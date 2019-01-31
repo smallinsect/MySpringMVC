@@ -33,7 +33,7 @@
 	</script>
 </head>
 <body>
-	<h1>获取直播列表</h1>
+	<h1>查询回放列表</h1>
 	<div id="divmsg"></div>
 </body>
 </html>

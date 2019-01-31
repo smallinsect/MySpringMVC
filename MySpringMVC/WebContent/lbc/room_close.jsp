@@ -28,7 +28,7 @@
 	</script>
 </head>
 <body>
-	<h1>获取直播间信息</h1>
+	<h1>关闭直播间</h1>
 	<div id="divmsg"></div>
 </body>
 </html>
