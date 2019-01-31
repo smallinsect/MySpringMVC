@@ -344,6 +344,7 @@ public class DirectSeedingController {
 	@ResponseBody
 	public String viewtemplateInfo(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.VIEWTEMPLATE_INFO, params);
 		
 		return json;
