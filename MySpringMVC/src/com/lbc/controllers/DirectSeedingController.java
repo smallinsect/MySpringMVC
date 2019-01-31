@@ -302,7 +302,10 @@ public class DirectSeedingController {
 	@RequestMapping("roomsPublishing")
 	@ResponseBody
 	public String roomsPublishing(HttpServletRequest request, HttpServletResponse response) {
+		String roomids = request.getParameter("roomids");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomids", roomids);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.ROOMS_PUBLISHING, params);
 		
 		return json;
