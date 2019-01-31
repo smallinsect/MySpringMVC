@@ -220,7 +220,20 @@ public class DirectSeedingController {
 	@RequestMapping("v2RecordInfo")
 	@ResponseBody
 	public String v2RecordInfo(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String pagenum = request.getParameter("pagenum");
+		String pageindex = request.getParameter("pageindex");
+		String starttime = request.getParameter("starttime");
+		String endtime = request.getParameter("endtime");
+		String liveid = request.getParameter("liveid");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("pagenum", pagenum);
+		params.put("pageindex", pageindex);
+		params.put("starttime", starttime);
+		params.put("endtime", endtime);
+		params.put("liveid", liveid);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.V2_RECORD_INFO, params);
 		
 		return json;
