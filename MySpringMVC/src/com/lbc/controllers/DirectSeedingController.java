@@ -266,7 +266,12 @@ public class DirectSeedingController {
 	@RequestMapping("liveMerge")
 	@ResponseBody
 	public String liveMerge(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String recordids = request.getParameter("recordids");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("recordids", recordids);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.LIVE_MERGE, params);
 		
 		return json;
