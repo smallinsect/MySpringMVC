@@ -530,7 +530,19 @@ public class DirectSeedingController {
 	@RequestMapping("liveChatmsg")
 	@ResponseBody
 	public String liveChatmsg(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String liveid = request.getParameter("liveid");
+		String pagenum = request.getParameter("pagenum");
+		String pageindex = request.getParameter("pageindex");
+		
 		Map<String, String> params = new HashMap<String, String>();
+
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("liveid", liveid);
+		params.put("pagenum", pagenum);
+		params.put("pageindex", pageindex);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.LIVE_CHATMSG, params);
 		
 		return json;
