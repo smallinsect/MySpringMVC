@@ -95,7 +95,7 @@ public class DirectSeedingUrlCon {
 	/**
 	 * 	获取单个直播回放的观看统计信息
 	 */
-	public static final String V2_STATIS_REPLAY_USERACTION = "http://api.csslcloud.net/api/v2/statis/replay/useraction";
+	public static final String STATIS_RECORD_USERACTION = "http://api.csslcloud.net/api/statis/record/useraction";
 	
 	/**
 	 * 	获取所有直播回放的观看统计信息
