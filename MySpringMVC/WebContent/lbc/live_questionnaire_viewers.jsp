@@ -6,10 +6,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript" src="<%=basePath %>jquery/jquery.js"></script>
+	<script type="text/javascript">
+		var dataparams = {
+				liveid: "F7DBF34D866E9AEC",//直播id
+				questionnaireid: "",//问卷ID
+				pageindex: "1",//页码
+				pagenum: "50"//每页显示的个数
+		};
+		$.ajax({
+			async: true,
+			type: "get",
+			url: "<%=basePath %>liveQuestionnaireViewers",
+			data: dataparams,
+			dataType: "json",
+			success: function(data){
+				if(data){
+					$("#divmsg").append(JSON.stringify(data));
+				}
+			}
+		});
+	</script>
 </head>
 <body>
-获取用户答卷信息
+	<h1>获取用户答卷信息</h1>
+	<div id="divmsg"></div>
 </body>
 </html>

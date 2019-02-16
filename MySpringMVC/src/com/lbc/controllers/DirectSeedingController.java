@@ -684,7 +684,18 @@ public class DirectSeedingController {
 	@RequestMapping("liveQuestionnaireViewers")
 	@ResponseBody
 	public String liveQuestionnaireViewers(HttpServletRequest request, HttpServletResponse response) {
+		String liveid = request.getParameter("liveid");
+		String questionnaireid = request.getParameter("questionnaireid");
+		String pageindex = request.getParameter("pageindex");
+		String pagenum = request.getParameter("pagenum");
+		
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("liveid", liveid);
+		params.put("questionnaireid", questionnaireid);
+		params.put("pageindex", pageindex);
+		params.put("pagenum", pagenum);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.LIVE_QUESTIONNAIRE_VIEWERS, params);
 		
 		return json;
