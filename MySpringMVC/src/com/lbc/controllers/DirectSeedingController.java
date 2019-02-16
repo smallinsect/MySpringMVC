@@ -663,7 +663,13 @@ public class DirectSeedingController {
 	@RequestMapping("liveQuestionnaires")
 	@ResponseBody
 	public String liveQuestionnaires(HttpServletRequest request, HttpServletResponse response) {
+		String liveid = request.getParameter("liveid");
+		
 		Map<String, String> params = new HashMap<String, String>();
+		
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("liveid", liveid);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.LIVE_QUESTIONNAIRES, params);
 		
 		return json;
