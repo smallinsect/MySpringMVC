@@ -78,6 +78,12 @@ public class DirectSeedingUrlCon {
 	public static final String STATIS_USERACTION = "http://api.csslcloud.net/api/statis/useraction";
 
 	/**
+	 * 	获取观看直播的访问记录
+	 */
+	public static final String STATIS_LIVE_USERACTION = "http://api.csslcloud.net/api/statis/live/useraction";
+
+	
+	/**
 	 * 	获取观看直播的统计信息
 	 */
 	public static final String STATIS_USERVIEW = "http://api.csslcloud.net/api/statis/userview";

@@ -11,12 +11,11 @@
 	<script type="text/javascript" src="<%=basePath %>jquery/jquery.js"></script>
 	<script type="text/javascript">
 		var dataparams = {
-				roomid: "27C5073749A609BE9C33DC5901307461"
 		};
 		$.ajax({
 			async: true,
 			type: "get",
-			url: "<%=basePath %>roomCode",
+			url: "<%=basePath %>statisLiveUseraction",
 			data: dataparams,
 			dataType: "json",
 			success: function(data){
@@ -28,7 +27,7 @@
 	</script>
 </head>
 <body>
-	<h1>获取直播间代码</h1>
+	<h1>获取观看直播的访问记录</h1>
 	<div id="divmsg"></div>
 </body>
 </html>

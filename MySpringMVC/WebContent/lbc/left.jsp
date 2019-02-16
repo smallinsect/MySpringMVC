@@ -29,6 +29,7 @@ a{
 	<a href="viewtemplate_info.jsp" target="showframe">获取直播间模板信息</a><br>
 	<a href="room_code.jsp" target="showframe">获取直播间代码</a><br>
 	<a href="statis_useraction.jsp" target="showframe">获取直播间内用户进出信息</a><br>
+	<a href="statis_live_useraction.jsp" target="showframe">获取观看直播的访问记录</a><br>
 	<a href="statis_userview.jsp" target="showframe">获取观看直播的统计信息</a><br>
 	<a href="v2_statis_replay_useraction.jsp" target="showframe">获取单个直播回放的观看统计信息</a><br>
 	<a href="v2_statis_replay.jsp" target="showframe">获取所有直播回放的观看统计信息</a><br>

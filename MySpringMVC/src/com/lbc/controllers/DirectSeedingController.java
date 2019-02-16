@@ -359,7 +359,10 @@ public class DirectSeedingController {
 	@RequestMapping("roomCode")
 	@ResponseBody
 	public String roomCode(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.ROOM_CODE, params);
 		
 		return json;
@@ -378,7 +381,22 @@ public class DirectSeedingController {
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_USERACTION, params);
 		
 		return json;
-	}		
+	}
+	
+	/**
+	 * 	获取观看直播的访问记录
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("statisLiveUseraction")
+	@ResponseBody
+	public String statisLiveUseraction(HttpServletRequest request, HttpServletResponse response) {
+		Map<String, String> params = new HashMap<String, String>();
+		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_LIVE_USERACTION, params);
+		
+		return json;
+	}
 	
 	/**
 	 * 	获取观看直播的统计信息
