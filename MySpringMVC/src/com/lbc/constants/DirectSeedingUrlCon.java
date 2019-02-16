@@ -81,8 +81,12 @@ public class DirectSeedingUrlCon {
 	 * 	获取观看直播的访问记录
 	 */
 	public static final String STATIS_LIVE_USERACTION = "http://api.csslcloud.net/api/statis/live/useraction";
-
 	
+	/**
+	 * 	获取直播互动的统计信息
+	 */
+	public static final String STATIS_INTERACTIVE = "http://api.csslcloud.net/api/statis/interactive";
+
 	/**
 	 * 	获取观看直播的统计信息
 	 */

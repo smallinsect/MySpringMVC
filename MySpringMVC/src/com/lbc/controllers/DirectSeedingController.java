@@ -421,6 +421,29 @@ public class DirectSeedingController {
 	}
 	
 	/**
+	 * 	获取直播互动的统计信息
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("statisInteractive")
+	@ResponseBody
+	public String statisInteractive(HttpServletRequest request, HttpServletResponse response) {
+		String liveid = request.getParameter("liveid");
+		String pageindex = request.getParameter("pageindex");
+		String pagenum = request.getParameter("pagenum");
+		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("liveid", liveid);
+		params.put("pageindex", pageindex);
+		params.put("pagenum", pagenum);
+		
+		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_INTERACTIVE, params);
+		
+		return json;
+	}
+	
+	/**
 	 * 	获取观看直播的统计信息
 	 * @param request
 	 * @param response
