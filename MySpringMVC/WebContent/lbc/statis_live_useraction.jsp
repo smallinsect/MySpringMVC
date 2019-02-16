@@ -11,6 +11,9 @@
 	<script type="text/javascript" src="<%=basePath %>jquery/jquery.js"></script>
 	<script type="text/javascript">
 		var dataparams = {
+				liveid: "F7DBF34D866E9AEC",//直播id
+				pageindex: "1",//页码
+				pagenum: "50"//每页显示的个数
 		};
 		$.ajax({
 			async: true,

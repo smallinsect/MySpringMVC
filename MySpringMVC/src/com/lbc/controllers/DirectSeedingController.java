@@ -406,7 +406,15 @@ public class DirectSeedingController {
 	@RequestMapping("statisLiveUseraction")
 	@ResponseBody
 	public String statisLiveUseraction(HttpServletRequest request, HttpServletResponse response) {
+		String liveid = request.getParameter("liveid");
+		String pageindex = request.getParameter("pageindex");
+		String pagenum = request.getParameter("pagenum");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("liveid", liveid);
+		params.put("pageindex", pageindex);
+		params.put("pagenum", pagenum);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_LIVE_USERACTION, params);
 		
 		return json;
