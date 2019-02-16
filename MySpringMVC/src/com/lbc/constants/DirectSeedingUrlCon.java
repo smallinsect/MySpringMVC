@@ -75,7 +75,7 @@ public class DirectSeedingUrlCon {
 	/**
 	 * 	获取直播间内用户进出信息
 	 */
-	public static final String STATIS_USERACTION = "http://api.csslcloud.net/api/statis/useraction";
+	public static final String STATIS_ROOM_USERACTION = "http://api.csslcloud.net/api/statis/room/useraction";
 
 	/**
 	 * 	获取观看直播的访问记录

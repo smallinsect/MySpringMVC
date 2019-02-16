@@ -374,11 +374,25 @@ public class DirectSeedingController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("statisUseraction")
+	@RequestMapping("statisRoomUseraction")
 	@ResponseBody
-	public String statisUseraction(HttpServletRequest request, HttpServletResponse response) {
+	public String statisRoomUseraction(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String starttime = request.getParameter("starttime");
+		String endtime = request.getParameter("endtime");
+		String action = request.getParameter("action");
+		String pageindex = request.getParameter("pageindex");
+		String pagenum = request.getParameter("pagenum");
+		
 		Map<String, String> params = new HashMap<String, String>();
-		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_USERACTION, params);
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("starttime", starttime);
+		params.put("endtime", endtime);
+		params.put("action", action);
+		params.put("pageindex", pageindex);
+		params.put("pagenum", pagenum);
+		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_ROOM_USERACTION, params);
 		
 		return json;
 	}
