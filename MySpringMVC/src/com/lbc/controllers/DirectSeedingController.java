@@ -452,7 +452,11 @@ public class DirectSeedingController {
 	@RequestMapping("statisUserview")
 	@ResponseBody
 	public String statisUserview(HttpServletRequest request, HttpServletResponse response) {
+		String liveid = request.getParameter("liveid");
 		Map<String, String> params = new HashMap<String, String>();
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("liveid", liveid);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_USERVIEW, params);
 		
 		return json;
