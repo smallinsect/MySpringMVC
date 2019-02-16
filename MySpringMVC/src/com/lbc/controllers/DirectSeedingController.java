@@ -499,11 +499,24 @@ public class DirectSeedingController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("v2StatisReplay")
+	@RequestMapping("statisUserRecordUseraction")
 	@ResponseBody
-	public String v2StatisReplay(HttpServletRequest request, HttpServletResponse response) {
+	public String statisUserRecordUseraction(HttpServletRequest request, HttpServletResponse response) {
+		String starttime = request.getParameter("starttime");
+		String endtime = request.getParameter("endtime");
+		String action = request.getParameter("action");
+		String pageindex = request.getParameter("pageindex");
+		String pagenum = request.getParameter("pagenum");
+		
 		Map<String, String> params = new HashMap<String, String>();
-		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.V2_STATIS_REPLAY, params);
+
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("starttime", starttime);
+		params.put("endtime", endtime);
+		params.put("action", action);
+		params.put("pageindex", pageindex);
+		params.put("pagenum", pagenum);
+		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.STATIS_USER_RECORD_USERACTION, params);
 		
 		return json;
 	}		
