@@ -611,7 +611,15 @@ public class DirectSeedingController {
 	@RequestMapping("liveRollcall")
 	@ResponseBody
 	public String liveRollcall(HttpServletRequest request, HttpServletResponse response) {
+		String roomid = request.getParameter("roomid");
+		String liveid = request.getParameter("liveid");
+		
 		Map<String, String> params = new HashMap<String, String>();
+
+		params.put("userid", UserUrlCon.USER_ID);
+		params.put("roomid", roomid);
+		params.put("liveid", liveid);
+		
 		String json = URLConUtil.lretrieve(DirectSeedingUrlCon.LIVE_ROLLCALL, params);
 		
 		return json;

@@ -31,7 +31,7 @@
 	</script>
 </head>
 <body>
-	<h1>获取观看直播的访问记录</h1>
+	<h1>获取问答信息</h1>
 	<div id="divmsg"></div>
 </body>
 </html>
