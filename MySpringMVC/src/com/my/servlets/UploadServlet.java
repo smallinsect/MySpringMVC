@@ -1,7 +1,9 @@
 package com.my.servlets;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -94,6 +96,12 @@ public class UploadServlet extends HttpServlet {
                         System.out.println(filePath);
                         // 保存文件到硬盘
                         item.write(storeFile);
+//                        InputStream in = item.getInputStream();
+//                        byte[] buff = new byte[1024];
+//                        while(in.read(buff) > 0) {
+//                        	System.out.println(new String(buff, "gbk"));
+//                        }
+                        
                         request.setAttribute("message", "文件上传成功!");
                     }
                 }
@@ -102,7 +110,6 @@ public class UploadServlet extends HttpServlet {
             request.setAttribute("message", "错误信息: " + ex.getMessage());
         }
         // 跳转到 message.jsp
-        getServletContext().getRequestDispatcher("/functions/message.jsp").forward(
-                request, response);
+        getServletContext().getRequestDispatcher("/functions/message.jsp").forward( request, response);
     }
 }
