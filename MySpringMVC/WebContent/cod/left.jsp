@@ -63,6 +63,7 @@ a{
 	<a href="main.jsp" target="showframe">3.45设置视频播放地址有效时长</a><br>
 	<a href="main.jsp" target="showframe">3.46设置单个视频播放密码</a><br>
 	<a href="main.jsp" target="showframe">3.47设置一批视频播放密码</a><br>
+	<a href="uploadFlash.jsp" target="showframe">视频上传</a><br>
 	
 </body>
 </html>
